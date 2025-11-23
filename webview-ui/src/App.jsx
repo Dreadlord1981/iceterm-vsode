@@ -8,20 +8,10 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { vscode } from "./utils/vscode"
 
 function App() {
-	const [state, setState] = useState({
+
+	let [state, setState] = useState({
 		selected: null,
-		items: [
-			{
-				id: "DKSRV206",
-				title: "DKSRV206",
-				src: "http://dksrv206:35700"
-			},
-			{
-				id: "DKSRV135",
-				title: "DKSRV135",
-				src: "http://dksrv135:7143"
-			}
-		]
+		items: []
 	});
 
 	function onItemEdit(i_event) {
@@ -61,6 +51,16 @@ function App() {
 			vscode.postMessage(o_found)
 		}
 	};
+
+	window.addEventListener("message", function(i_event) {
+		debugger;
+		let o_clone = {...state};
+		var a_servers = i_event.data || [];
+
+		o_clone.items = a_servers;
+
+		setState(o_clone);
+	})
 
 	return (
 		<>
