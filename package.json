@@ -3,7 +3,7 @@
   "name": "iceterm",
   "displayName": "IceTerm",
   "description": "Sitemule iceterm, small IBM I 5250 terminal written in rust",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.106.1"
   },
