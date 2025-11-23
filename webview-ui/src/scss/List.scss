@@ -1,0 +1,44 @@
+@use "sass:color";
+$item-hover-color: color.adjust(blue, $lightness: 23%);
+
+.list {
+	display: flex;
+	flex: 1;
+}
+
+.list-items {
+	padding-left: 0;
+	padding-right: 0;
+	list-style-type: none;
+	flex: 1;
+	flex-direction: column;
+	display: flex;
+}
+
+.list-item {
+	padding-left: 0.5em;
+	padding-right: 1em;
+	margin: 0.1em;
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	gap: 0.4em;
+	font-size: 13px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.list-item-title {
+	user-select: none;
+}
+
+.list-item-action {
+	cursor: pointer;
+	padding: 2px;
+	user-select: none;
+}
+
+.list-item-action:hover {
+	color: $item-hover-color;
+}
