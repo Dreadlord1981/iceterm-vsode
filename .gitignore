@@ -2,3 +2,4 @@ node_modules/*
 webview-ui/node_modules/*
 webview-ui/build/*
 dist/*
+*.vsix

@@ -14,26 +14,6 @@ function App() {
 		items: []
 	});
 
-	function onItemEdit(i_event) {
-		
-		let o_clone = {...state};
-		let i_target = i_event.target;
-
-		let i_parent = i_target.parentNode;
-
-		let s_name = i_parent.getAttribute("name");
-
-		let o_found = state.items.filter(function(o_search) {
-			return o_search.id == s_name;
-		})[0];
-
-		if (o_found) {
-			o_clone.selected = {...o_found};
-		}
-
-		setState(o_clone);
-	};
-
 	function onItemRun(i_event) {
 
 		let o_clone = {...state};
@@ -53,7 +33,7 @@ function App() {
 	};
 
 	window.addEventListener("message", function(i_event) {
-		debugger;
+
 		let o_clone = {...state};
 		var a_servers = i_event.data || [];
 
@@ -67,7 +47,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="*" element= {<Main>
-						<List state={state} onItemEdit={onItemEdit} onItemRun={onItemRun}>
+						<List state={state} onItemRun={onItemRun}>
 						</List>
 					</Main>}>
 					</Route>

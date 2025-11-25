@@ -1,58 +1,58 @@
-{
-  "publisher": "sitemule",
-  "name": "iceterm",
-  "displayName": "IceTerm",
-  "description": "Sitemule iceterm, small IBM I 5250 terminal written in rust",
-  "version": "0.0.7",
-  "engines": {
-    "vscode": "^1.106.1"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [],
-  "main": "./dist/extension.js",
-    "contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "iceset-settings",
-          "title": "Iceset",
-          "icon": "icons/icon.svg"
-        }
-      ]
-    },
-    "views": {
-      "iceset-settings": [
-        {
-          "id": "icesetview",
-          "type": "webview",
-          "name": "Connections",
-          "icon": "icons/icon.svg"
-        }
-      ]
-    }
-  },
-  "scripts": {
-	"install:all": "npm install && cd webview-ui && npm install",
-    "start:webview": "cd webview-ui && npm run start",
-    "build:webview": "cd webview-ui && npm run build",
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test",
-	"vsce": "vsce package"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.106.1",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "typescript-eslint": "^8.46.3",
-    "eslint": "^9.39.1",
-    "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
-  }
+	{
+		"publisher": "sitemule",
+		"name": "iceterm",
+		"displayName": "IceTerm",
+		"description": "Sitemule iceterm, small IBM I 5250 terminal written in rust",
+		"version": "0.1.1",
+		"engines": {
+		"vscode": "^1.106.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "iceterm",
+					"title": "Iceterm",
+					"icon": "icons/icon.svg"
+				}
+			]
+		},
+		"views": {
+			"iceterm": [
+				{
+					"id": "connections",
+					"type": "webview",
+					"name": "Connections",
+					"icon": "icons/icon.svg"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"install:all": "npm install && cd webview-ui && npm install",
+		"start:webview": "cd webview-ui && npm run start",
+		"build:webview": "cd webview-ui && npm run build",
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src",
+		"test": "vscode-test",
+		"vsce": "vsce package"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.106.1",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "22.x",
+		"typescript-eslint": "^8.46.3",
+		"eslint": "^9.39.1",
+		"typescript": "^5.9.3",
+		"@vscode/test-cli": "^0.0.12",
+		"@vscode/test-electron": "^2.5.2"
+	}
 }
